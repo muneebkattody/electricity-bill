@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left {
+  width: 40%;
+  padding: 60px;
+}
+
+.right {
+  width: 60%;
+  background: url('/assets/electricity.jpg') center/cover no-repeat;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #4caf50;
+  color: white;
+  border: none;
+}
+
+.error {
+  color: red;
+  font-size: 13px;
+}
+
+/* body {
+  background: #eef2f3;
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-image: url("https://cdn.newsfirst.lk/english-uploads/2022/08/Electricity%202-690559.jpg");
+  background-size: cover;
+} */
+
+/* body {
+  margin: 0;
+  background-image: url("https://cdn.newsfirst.lk/english-uploads/2022/08/Electricity%202-690559.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+} */

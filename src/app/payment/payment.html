@@ -1,0 +1,71 @@
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/100" />
+      <h3>Sireeshan</h3>
+      <p>Gundalpett, Karnataka</p>
+    </div>
+
+    <button class="btn-outline" (click)="createComplaint()">Create Complaint</button>
+
+    <button class="btn-logout" (click)="logout()">Sign Out</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    <!-- Pending Payment -->
+    <div class="pending">
+      <div>
+        <small>Pending Payment</small>
+        <h1>4213451</h1>
+      </div>
+      <h2>Jan 2026</h2>
+    </div>
+
+    <!-- Card Form -->
+    <form [formGroup]="paymentForm" class="card-box">
+
+      <div class="card-header">
+        <span>✔ Enter Card Details</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" />
+      </div>
+
+      <div class="form-row">
+        <label>Card number</label>
+        <input type="text" maxlength="16" formControlName="cardNumber" />
+      </div>
+
+      <div class="form-row">
+        <label>Card owner</label>
+        <input type="text" formControlName="cardOwner" />
+      </div>
+
+      <div class="row">
+        <div>
+          <label>Expiry Month</label>
+          <input type="text" maxlength="2" placeholder="MM" formControlName="expiryMonth" />
+        </div>
+
+        <div>
+          <label>Expiry Year</label>
+          <input type="text" maxlength="2" placeholder="YY" formControlName="expiryYear" />
+        </div>
+
+        <div>
+          <label>CVV</label>
+          <input type="password" maxlength="3" formControlName="cvv" />
+        </div>
+      </div>
+
+      <button class="pay-btn" (click)="completePayment()" [disabled]="paymentForm.invalid">
+        Complete Payment
+      </button>
+
+    </form>
+
+  </div>
+</div>
+

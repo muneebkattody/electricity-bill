@@ -1,0 +1,57 @@
+<div class="container">
+
+  <div class="left">
+    <h2>Login with OTP</h2>
+
+    <form [formGroup]="otpForm">
+
+      <label>Phone Number</label>
+      <input
+        type="text"
+        maxlength="10"
+        formControlName="phone"
+        placeholder="Enter phone number"
+      >
+
+      <div class="error" *ngIf="otpForm.get('phone')?.touched && otpForm.get('phone')?.invalid">
+        Phone number must start with 6, 7, 8 or 9 and be 10 digits
+      </div>
+
+      <button
+        type="button"
+        (click)="generateOtp()"
+        [disabled]="otpForm.get('phone')?.invalid"
+      >
+        Generate OTP
+      </button>
+
+      <div *ngIf="otpGenerated">
+
+        <label>OTP</label>
+        <input
+          type="text"
+          maxlength="4"
+          formControlName="otp"
+          placeholder="Enter OTP"
+        >
+
+        <div class="error" *ngIf="otpForm.get('otp')?.touched && otpForm.get('otp')?.invalid">
+          OTP must be exactly 4 digits
+        </div>
+
+        <button
+          type="button"
+          (click)="verifyOtp()"
+          [disabled]="otpForm.invalid"
+        >
+          Verify OTP
+        </button>
+
+      </div>
+
+    </form>
+  </div>
+
+  <div class="right"></div>
+
+</div>

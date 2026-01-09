@@ -1,0 +1,59 @@
+<div class="dashboard-container">
+
+  <!-- LEFT SIDEBAR -->
+  <div class="sidebar">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/100" alt="Profile">
+      <h3>{{ user.name }}</h3>
+      <p>{{ user.location }}</p>
+    </div>
+
+    <button class="btn-outline" (click)="createComplaint()">
+      Create Complaint
+    </button>
+
+    <button class="btn-signout" (click)="signOut()">
+      Sign Out
+    </button>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="content">
+
+    <!-- PAYMENT CARD -->
+    <div class="payment-card">
+      <div>
+        <p class="label">Pending Payment</p>
+        <h2>{{ pendingAmount | number }}</h2>
+      </div>
+
+      <div class="pay-action">
+        <button (click)="payNow()">Pay Now</button>
+        <small>Due date: {{ dueDate }}</small>
+      </div>
+    </div>
+
+    <!-- BILLS TABLE -->
+    <div class="bills-card">
+      <h3>Previous Months Bills</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Month</th>
+            <th>Unit</th>
+            <th>Charge</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let bill of bills">
+            <td>{{ bill.month }}</td>
+            <td>{{ bill.unit }}</td>
+            <td>{{ bill.charge | number }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

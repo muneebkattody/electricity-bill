@@ -1,0 +1,61 @@
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile">
+      <!-- <img src="https://i.pravatar.cc/100" /> -->
+         <img src="https://stock.adobe.com/search?k=profile+icon"/>
+      <h3>Sireeshan</h3>
+      <p>Gundalpett, Karnataka</p>
+    </div>
+
+    <button class="logout-btn" (click)="logout()">Sign Out</button>
+  </div>
+
+  <!-- Complaint Form -->
+  <div class="content">
+    <div class="card">
+
+      <h2>Create Complaint</h2>
+
+      <form [formGroup]="complaintForm">
+
+        <label>Complaint Type</label>
+        <select formControlName="complaintType">
+          <option value="">Select Complaint</option>
+          <option>Meter Reading Issue</option>
+          <option>Billing Issue</option>
+          <option>Power Outage</option>
+          <option>Voltage Fluctuation</option>
+        </select>
+
+        <label>Consumer Id</label>
+        <input
+          type="text"
+          formControlName="consumerId"
+          placeholder="Enter Consumer ID"
+        />
+
+        <label>Description</label>
+        <textarea
+          rows="5"
+          formControlName="description"
+          placeholder="Enter complaint details"
+        ></textarea>
+
+        <button
+          class="submit-btn"
+          type="button"
+          (click)="submitComplaint()"
+          [disabled]="complaintForm.invalid"
+        >
+          Create Complaint
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
