@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Dashboardservice } from '../dashboardservice';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -12,26 +13,39 @@ import { Router } from '@angular/router';
 })
 export class UserDashboard {
 
- 
-  user = {
-    name: 'Sireeshan',
-    location: 'Gundlupet, Karnataka'
-  };
+  user: any = {};
+  pendingAmount = 0;
+  dueDate = '';
+  bills: any[] = [];
+  loading = true;
 
-  pendingAmount = 4213451;
-  dueDate = '18th Jan 2026';
+  constructor(
+    private router: Router,
+    private dashboardService: Dashboardservice
+  ) {}
 
-  bills = [
-    { month: 'January', unit: 124, charge: 432524 },
-    { month: 'January', unit: 124, charge: 432524 },
-    { month: 'January', unit: 124, charge: 432524 },
-    { month: 'January', unit: 124, charge: 432524 }
-  ];
+  ngOnInit(): void {
+    this.loadDashboardData();
+  }
 
-  constructor(private router: Router) {}
+  loadDashboardData() {
+    this.dashboardService.getUserDetails().subscribe(res => {
+      this.user = res;
+    });
+
+    this.dashboardService.getPendingPayment().subscribe(res => {
+      this.pendingAmount = res.amount;
+      this.dueDate = res.dueDate;
+    });
+
+    this.dashboardService.getBills().subscribe(res => {
+      this.bills = res;
+      this.loading = false;
+    });
+  }
 
   createComplaint() {
-    this.router.navigate(['/complaint']);
+    this.router.navigate(['/complaintstatus']);
   }
 
   payNow() {
@@ -39,7 +53,6 @@ export class UserDashboard {
   }
 
   signOut() {
-    localStorage.clear();
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 }

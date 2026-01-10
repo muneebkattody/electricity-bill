@@ -3,10 +3,9 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <div class="profile">
-      <!-- <img src="https://i.pravatar.cc/100" /> -->
-         <img src="https://stock.adobe.com/search?k=profile+icon"/>
+      <img src="https://i.pravatar.cc/100" alt="Profile">
       <h3>Sireeshan</h3>
-      <p>Gundalpett, Karnataka</p>
+      <p>Gundlupet, Karnataka</p>
     </div>
 
     <button class="logout-btn" (click)="logout()">Sign Out</button>
@@ -28,6 +27,9 @@
           <option>Power Outage</option>
           <option>Voltage Fluctuation</option>
         </select>
+        <small *ngIf="complaintForm.get('complaintType')?.touched && complaintForm.get('complaintType')?.invalid">
+          Complaint type is required
+        </small>
 
         <label>Consumer Id</label>
         <input
@@ -35,6 +37,9 @@
           formControlName="consumerId"
           placeholder="Enter Consumer ID"
         />
+        <small *ngIf="complaintForm.get('consumerId')?.touched && complaintForm.get('consumerId')?.invalid">
+          Enter valid Consumer ID (6–12 digits)
+        </small>
 
         <label>Description</label>
         <textarea
@@ -42,14 +47,17 @@
           formControlName="description"
           placeholder="Enter complaint details"
         ></textarea>
+        <small *ngIf="complaintForm.get('description')?.touched && complaintForm.get('description')?.invalid">
+          Minimum 10 characters required
+        </small>
 
         <button
           class="submit-btn"
           type="button"
           (click)="submitComplaint()"
-          [disabled]="complaintForm.invalid"
+          [disabled]="complaintForm.invalid || loading"
         >
-          Create Complaint
+          {{ loading ? 'Submitting...' : 'Create Complaint' }}
         </button>
 
       </form>
@@ -58,4 +66,3 @@
   </div>
 
 </div>
-

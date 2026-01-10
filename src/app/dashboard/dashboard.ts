@@ -16,4 +16,7 @@ export class Dashboard {
   goToLogin() {
     this.router.navigate(['/login']);
   }
+   goToPaybill() {
+    this.router.navigate(['/guestpaybill']);
+  }
 }

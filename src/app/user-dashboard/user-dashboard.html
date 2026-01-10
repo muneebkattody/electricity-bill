@@ -45,7 +45,12 @@
             <th>Charge</th>
           </tr>
         </thead>
+
         <tbody>
+          <tr *ngIf="loading">
+            <td colspan="3">Loading bills...</td>
+          </tr>
+
           <tr *ngFor="let bill of bills">
             <td>{{ bill.month }}</td>
             <td>{{ bill.unit }}</td>

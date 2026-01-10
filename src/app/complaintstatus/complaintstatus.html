@@ -1,0 +1,77 @@
+<div class="layout">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/100" />
+      <h3>Sireeshan</h3>
+      <p>Gundalpett, Karnataka</p>
+    </div>
+
+    <button class="btn-logout" (click)="logout()">Sign Out</button>
+  </div>
+
+  <!-- Main Content -->
+  <div class="content">
+
+    <div class="header">
+      <h2>Active Complaint</h2>
+      <button class="btn-create" (click)="createComplaint()">Create Complaint</button>
+    </div>
+
+    <!-- Active Complaint Card -->
+    <div *ngIf="activeComplaint" class="active-box">
+      <div>
+        <small>Complaint</small>
+        <h3>{{ activeComplaint.title }}</h3>
+      </div>
+
+      <div>
+        <small>Current Status</small>
+        <h3>{{ activeComplaint.status }}</h3>
+      </div>
+
+      <div>
+        <small>Opened Date</small>
+        <h3>{{ activeComplaint.openedDate }}</h3>
+      </div>
+
+      <button class="btn-view" (click)="viewComplaint(activeComplaint.id)">
+        View
+      </button>
+    </div>
+
+    <!-- All Complaints -->
+    <h2 class="mt">All Complaints</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Complaint</th>
+          <th>Status</th>
+          <th>Opened Date</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let c of complaints; let i = index"
+            [class.alt]="i % 2 === 1">
+
+          <td>{{ c.title }}</td>
+
+          <td>
+            <span class="status"
+              [class.open]="c.status === 'Open'"
+              [class.closed]="c.status === 'Closed'"
+              [class.assigned]="c.status === 'Electrician Assigned'">
+              {{ c.status }}
+            </span>
+          </td>
+
+          <td>{{ c.openedDate }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

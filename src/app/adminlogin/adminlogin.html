@@ -1,0 +1,42 @@
+<div class="login-container">
+  <div class="login-left">
+    <form [formGroup]="loginForm">
+      <label>Email</label>
+      <input type="email" formControlName="email">
+
+      <small *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+        Enter a valid email
+      </small>
+
+      <label>Password</label>
+      <input type="password" formControlName="password">
+
+      <small *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+        Password must be at least 6 characters
+      </small>
+
+      <button
+        type="button"
+        class="otp-btn"
+        (click)="generateOtp()"
+        [disabled]="loginForm.invalid">
+        Generate OTP
+      </button>
+    </form>
+
+    <!-- OTP Section -->
+    <form *ngIf="showOtp" [formGroup]="otpForm" class="otp-section">
+      <label>Enter OTP</label>
+      <input type="text" maxlength="4" formControlName="otp">
+
+      <small *ngIf="otpForm.get('otp')?.touched && otpForm.get('otp')?.invalid">
+        OTP must be 4 digits
+      </small>
+
+      <button type="button" (click)="verifyOtp">Verify OTP</button>
+    </form>
+  </div>
+
+  <div class="login-right"></div>
+</div>
+

@@ -1,0 +1,22 @@
+<div class="layout">
+
+  <div class="sidebar">
+    <div class="profile">
+      <img src="https://i.pravatar.cc/100">
+      <h3>Sireeshan</h3>
+      <p>Gundalpett, Karnataka</p>
+    </div>
+
+    <button (click)="createComplaint()">Create Complaint</button>
+    <button class="logout" (click)="logout()">Sign Out</button>
+  </div>
+
+  <div class="success-content">
+    <div class="icon">✔</div>
+    <h1>{{ message }}</h1>
+    <p>Transaction Id : {{ transactionId }}</p>
+    <button (click)="goDashboard()">Go Dashboard</button>
+  </div>
+
+</div>
+

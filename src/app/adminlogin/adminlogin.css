@@ -1,0 +1,57 @@
+.login-container {
+  display: flex;
+  height: 100vh;
+}
+
+.login-left {
+  width: 40%;
+  padding: 80px;
+}
+
+.login-right {
+  width: 60%;
+  background-image: url('/assets/power-lines.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+small {
+  color: red;
+  font-size: 12px;
+}
+
+.otp-btn,
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  background-color: #5fd05f;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #b5e6b5;
+  cursor: not-allowed;
+}
+
+.otp-section {
+  margin-top: 30px;
+}

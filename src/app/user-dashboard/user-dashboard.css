@@ -1,19 +1,17 @@
 .dashboard-container {
   display: flex;
   height: 100vh;
-  background: #f5f7fa;
   font-family: Arial, sans-serif;
 }
 
 /* SIDEBAR */
 .sidebar {
   width: 260px;
-  background: #ffffff;
   padding: 20px;
+  border-right: 1px solid #ddd;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.05);
 }
 
 .profile {
@@ -21,92 +19,69 @@
 }
 
 .profile img {
-  width: 70px;
+  width: 80px;
   border-radius: 50%;
 }
 
-.profile h3 {
-  margin: 10px 0 5px;
-}
-
-.profile p {
-  font-size: 14px;
-  color: #777;
-}
-
 .btn-outline {
-  padding: 10px;
-  border: 1px solid #4caf50;
-  background: none;
-  color: #4caf50;
-  border-radius: 6px;
-  cursor: pointer;
   margin-top: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  cursor: pointer;
 }
 
 .btn-signout {
-  padding: 10px;
-  background: #f8d7da;
+  padding: 12px;
+  border-radius: 10px;
   border: none;
-  color: #721c24;
-  border-radius: 6px;
+  background: #f6d6d6;
   cursor: pointer;
 }
 
 /* MAIN CONTENT */
 .content {
   flex: 1;
-  padding: 30px;
+  padding: 40px;
 }
 
-/* PAYMENT CARD */
 .payment-card {
-  background: #fff3e0;
-  padding: 20px;
-  border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  background: #fdecea;
+  padding: 20px;
+  border-radius: 16px;
 }
 
-.payment-card h2 {
-  margin: 5px 0 0;
-}
-
-.pay-action {
-  text-align: right;
+.label {
+  font-size: 14px;
+  color: gray;
 }
 
 .pay-action button {
-  background: #ff7043;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: #ff5c5c;
   color: white;
   border: none;
-  padding: 8px 18px;
-  border-radius: 6px;
   cursor: pointer;
 }
 
-/* BILLS TABLE */
 .bills-card {
-  background: #ffffff;
+  margin-top: 30px;
+  background: #fff;
   padding: 20px;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
 }
 
-th {
-  background: #e8f5e9;
-  text-align: left;
+th, td {
   padding: 10px;
-}
-
-td {
-  padding: 10px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #ddd;
 }

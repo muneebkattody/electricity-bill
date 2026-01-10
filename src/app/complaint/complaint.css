@@ -1,32 +1,34 @@
 .layout {
   display: flex;
   height: 100vh;
-  font-family: Arial, sans-serif;
+  background: #f4f6f9;
 }
 
 .sidebar {
   width: 260px;
+  background: #1e293b;
+  color: white;
   padding: 20px;
-  border-right: 1px solid #ddd;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
 }
 
 .profile {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .profile img {
-  width: 80px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
 }
 
 .logout-btn {
-  padding: 12px;
-  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  background: #ef4444;
   border: none;
-  background: #f6d6d6;
+  color: white;
+  border-radius: 5px;
   cursor: pointer;
 }
 
@@ -38,42 +40,39 @@
 }
 
 .card {
-  width: 420px;
-  background: #fff;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-}
-
-h2 {
-  margin-bottom: 20px;
+  width: 450px;
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 label {
+  font-weight: 600;
+  margin-top: 12px;
   display: block;
-  margin-top: 14px;
-  margin-bottom: 6px;
 }
 
 input, select, textarea {
   width: 100%;
-  padding: 10px;
-  border-radius: 8px;
+  padding: 8px;
+  margin-top: 6px;
+  border-radius: 5px;
   border: 1px solid #ccc;
+}
+
+small {
+  color: red;
+  font-size: 12px;
 }
 
 .submit-btn {
   width: 100%;
-  margin-top: 25px;
-  padding: 14px;
-  background: #28a745;
+  margin-top: 20px;
+  padding: 10px;
+  background: #2563eb;
   color: white;
   border: none;
-  border-radius: 10px;
-  font-size: 16px;
+  border-radius: 5px;
   cursor: pointer;
-}
-
-.submit-btn:disabled {
-  background: #9cccac;
 }

@@ -1,4 +1,4 @@
-.container {
+/* .container {
   display: flex;
   height: 100vh;
 }
@@ -49,4 +49,72 @@ button {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-} */
+} */ */
+
+
+
+
+
+
+
+
+
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f2f6ff;
+}
+
+.card {
+  width: 350px;
+  padding: 25px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #1e3c72;
+}
+
+p {
+  text-align: center;
+  color: gray;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 10px;
+  background: #1e3c72;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #999;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
